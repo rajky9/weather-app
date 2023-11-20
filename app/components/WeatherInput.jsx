@@ -19,7 +19,11 @@ export default function WeatherInput({ setData }) {
           value={input}
           onChange={(e) => setinput(e.target.value)}
         />
-        <button type="submit" className="w-full text-white text-xl border hover:bg-blue-400 border-blue-600 font-bold p-3 bg-blue-500 my-3 rounded-md">
+
+        <button
+          type="submit"
+          className="w-full text-white text-xl border hover:bg-blue-400 border-blue-600 font-bold p-3 bg-blue-500 my-3 rounded-md"
+        >
           Search
         </button>
       </form>
