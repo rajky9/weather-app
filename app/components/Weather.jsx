@@ -6,13 +6,29 @@ import bg from "@/public/background.jpg";
 import Image from "next/image";
 import Footer from "./Footer";
 
+const API_KEY = process.env.API_KEY;
+console.log(API_KEY);
+async function getWeather(city) {
+  try {
+    console.log(API_KEY);
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("chyba pri nacitani dat");
+  }
+  return null;
+}
+
 const Weather = () => {
   const [data, setData] = useState(null);
   return (
     <div className="w-full h-screen lex flex-col justify-center items-center">
       {/* BackGround */}
       <div className="absolute top-0 left-0 w-full h-full z-[-1]">
-        <Image src={bg} className="w-full h-full object-cover" />
+        <Image src={bg} className="w-full h-full object-cover" alt="/"/>
         {/* OVERLAY*/}
         <div className="absolute top-0 left-0 w-full h-screen bg-black/30" />
       </div>

@@ -53,7 +53,7 @@ const WeatherInfo = ({ data }) => {
   console.log("asdasd", data)
   return (
     <>
-      {data?.cod == 404 && (
+      {data?.cod >= 400 && (
         <div className="text-white text-center border-2 shadow-lg shadow-gray-900 bg-black/50 rounded-lg p-4 border-black">
           <p className="text-2xl pb-4">Oooops, {data.message}</p> 
           <p className="text-md">Try to type exact name.</p>
