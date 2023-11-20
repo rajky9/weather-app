@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { TiLocationArrow } from "react-icons/ti";
 
 const kelvinToCelsius = (kelvin) => {
@@ -65,7 +66,7 @@ const WeatherInfo = ({ data }) => {
               {data.name}, {data.sys.country}
             </h2>
             <p className="flex  items-center">
-              <img src="https://openweathermap.org/img/wn/10d.png" alt="/" />
+              <Image src="https://openweathermap.org/img/wn/10d.png" width={50} height={50} alt="/" />
               <span className="text-3xl font-bold">
                 {kelvinToCelsius(data?.main.temp)} °C
               </span>
