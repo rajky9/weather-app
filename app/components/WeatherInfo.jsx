@@ -50,7 +50,6 @@ const windScale = (deg) => {
 
 const WeatherInfo = ({ data }) => {
   const windDeg = getWindDirection(data?.wind?.deg);
-  console.log("asdasd", data)
   return (
     <>
       {data?.cod >= 400 && (

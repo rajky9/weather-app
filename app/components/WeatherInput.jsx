@@ -8,7 +8,6 @@ export default function WeatherInput({ setData }) {
     const weather = await getWeather(input);
     setData(weather);
   };
-  console.log(input);
   return (
     <div className="w-full">
       <input
