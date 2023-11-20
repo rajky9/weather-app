@@ -4,7 +4,8 @@ import { getWeather } from "../data/weather";
 
 export default function WeatherInput({ setData }) {
   const [input, setinput] = useState("");
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const weather = await getWeather(input);
     setData(weather);
   };
